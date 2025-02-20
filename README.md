@@ -109,3 +109,69 @@ We'd like to inform you of important changes to our distribution repository [nod
 - **Installation Scripts:** Back by popular demand, the installation scripts have returned and are better than ever. See the installation instructions below for details on how to use them.
 - **RPM Package Signing Key:** The key used to sign RPM packages has changed. We now sign packages using SHA256, providing better support to the community.
 - **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discussion space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
+
+  ##Instructions for Currency Conversion Assignment
+
+  # Currency Conversion API
+
+A simple API built with **Node.js** and **Express** to convert currencies using an external exchange rate API.
+
+## 📌 Setup
+1. Install required dependencies:
+   ```sh
+   npm install
+   ```
+2. Create a `.env` file and add:
+   ```env
+   EXCHANGE_RATE_API_KEY=your_api_key_here
+   PORT=5000
+   ```
+3. Start the server:
+   ```sh
+   npm start
+   ```
+
+## 🛠 Project Structure
+```
+.
+├── routes/
+│   ├── currencyRoutes.js  # Handles currency conversion API routes
+├── server.js               # Main server file with Express setup
+├── .env                    # Environment variables
+├── package.json            # Dependencies & scripts
+├── node_modules/           # Installed packages
+└── README.md               # Documentation
+```
+
+## 📦 Installed Packages
+- **express** - Web framework for Node.js
+- **dotenv** - Loads environment variables
+- **axios** - Makes HTTP requests to the exchange rate API
+
+## 🔄 API Endpoint
+**Convert Currency:**
+```http
+GET /api/currency/convert?from=USD&to=INR&amount=100
+```
+**Response:**
+```json
+{
+    "base_currency": "USD",
+    "target_currency": "INR",
+    "amount": 100,
+    "converted_amount": 8320,
+    "exchange_rate": 83.2
+}
+```
+
+## ✅ Scripts
+| Script       | Description                |
+|-------------|----------------------------|
+| `npm start` | Starts the server (`node server.js`) |
+
+To restart the server after changes:
+```sh
+npm start
+```
+
+
